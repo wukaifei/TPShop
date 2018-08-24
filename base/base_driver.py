@@ -9,6 +9,6 @@ def init_driver():
     desired_caps['unicodeKeyboard'] = True
     desired_caps['resetKeyboard'] = True
     # app 信息
-    desired_caps['appPackage'] = 'com.android.settings'
-    desired_caps['appActivity'] = '.Settings'
+    desired_caps['appPackage'] = 'com.tpshop.malls'
+    desired_caps['appActivity'] = '.SPMainActivity'
     return webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
