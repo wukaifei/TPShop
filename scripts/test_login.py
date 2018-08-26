@@ -20,7 +20,6 @@ def show_password_data():
     for i in range(2):
         temp_list.append(random_password())
 
-
 class TestLogin:
 
     def setup(self):
