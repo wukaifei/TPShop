@@ -34,9 +34,19 @@ class BaseAction:
         element = self.find_element((By.XPATH, message), timeout=timeout, poll=0.1)
         return element.text
 
+    @allure.step(title="判断toast是否存在")
     def is_toast_exist(self, message):
         try:
             self.find_toast(message)
             return True
         except Exception:
             return False
+
+    def is_location_enabled(self, location):
+        # return self.find_element(location).get_attribute("enabled") == "True":
+        if self.find_element(location).get_attribute("enabled") == "True":
+            return True
+        return False
+
+    def is_location_clickable(self, location):
+        return self.find_element(location).get_attribute("clickable") == "True"
